@@ -8,7 +8,10 @@ pipeline {
         }
         stage("Build") {
             steps {
-                sh "./gradlew build"
+                  // Gradle 실행 권한 추가
+                sh 'chmod +x ./gradlew'
+                // Gradle 빌드 실행
+                sh './gradlew clean build'
             }
         }
         stage("Unit test") {
