@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage("Compile") {
+            steps {
+                sh "./gradlew compileJava"
+                }
+            }
+
         stage('Checkout') {
             steps {
                 // Git Repository에서 소스 코드 체크아웃
@@ -19,3 +25,4 @@ pipeline {
         }
     }
 }
+//202135704 곽서연
